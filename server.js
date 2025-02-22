@@ -34,7 +34,7 @@ const canesCombos = {
 }
 
 app.get('/', (req, res) => {
-    res.sendFile('/index.html')
+    res.sendFile('https://catchup-crew-progress-tracker.onrender.com/')
 })
 
 app.get('/api/:choice', (req, res) => {
@@ -47,6 +47,6 @@ app.get('/api/:choice', (req, res) => {
     }
 })
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
     console.log(`The server is now running on port ${PORT}`)
 })
