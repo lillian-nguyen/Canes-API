@@ -30,6 +30,11 @@ const canesCombos = {
         'name': 'The Kids Combo',
         'includes': ['chicken fingers (2)', 'cane\'s sauce (1)', 'crinkle-cut fries', 'kid\'s size drink (12 oz)'],
         'coverImg': 'https://images.prismic.io/raisingcanes/ZjZiMmJkYjUtZmJkZS00Y2ZiLTkxNDAtMWE3NzIyODFjZmQw_04bf7586-877d-4c5b-b358-b4bac61fb6c1_kidscombo_2022.png?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&rect=0%2C0%2C2000%2C2000&w=512&h=512',
+    },
+    "unknown": {
+        'name': 'unknown',
+        'includes': ['unknown'],
+        'coverImg': 'unknown'
     }
 }
 
@@ -43,7 +48,7 @@ app.get('/api/:choice', (req, res) => {
     if (canesCombos[comboChoice]) {
         res.json(canesCombos[comboChoice])
     } else {
-        res.json(bookshelf['unknown'])
+        res.json(canesCombos['unknown'])
     }
 })
 
